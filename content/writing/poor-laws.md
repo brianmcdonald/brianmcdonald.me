@@ -5,6 +5,7 @@ Tags: dignity, policy
 Category: General
 Slug: learning-from-the-poor-laws 
 Author: Brian Mc Donald
+Status: draft
 Summary: What can the poor laws of the 19th century teach us about human dignity and today's approach to humanitarian aid?
 
 ## What were the poor laws?
