@@ -9,7 +9,7 @@ Summary: Brian Mc Donald is a humanitarian information management specialist bas
 
 Hi. My name is Brian Mc Donald. I'm Irish but currently live just outside Geneva. For the past 8 years I've work in the Humanitarian Response field, primarily on Information Management. My work focuses mainly on data collection analysis (including geospatial) and data visualization/storytelling. I have a deep interest in how people engage with data and the systems which influence its creation and use. My concerns include the expanding asymmetries of power of our digital age.
 
-I'm an experienced whitewater kayaker, having paddlied rivers in Chile, Peru, Uganda, South Sudan, Georgia, northern India, Nepal, Norway and across Europe. I still try to go kayaking in the alps on the occasional weekend, so kayaking partners are always welcome.
+I'm an experienced whitewater kayaker, having paddled rivers in Chile, Peru, Uganda, South Sudan, Georgia, northern India, Nepal, Norway and across Europe. I still try to go kayaking in the alps on the occasional weekend, so kayaking partners are always welcome.
 
 The illustrated image is borrowed from an OCHA/Information Management Working Group document on staffing profiles. The main header photo is one of my own, of [Jokhang Temple][Johkang Temple] in Lhasa.
 

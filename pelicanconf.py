@@ -5,7 +5,7 @@ from datetime import datetime
 
 AUTHOR = 'Brian Mc Donald'
 SITENAME = 'Brian Mc Donald'
-SITEURL = 'https://brianmcdonald.me' #https://brianmcdonald.github.io/brianmcdonald.me/'
+SITEURL = 'https://brianmcdonald.me' 
 PATH = 'content'
 TIMEZONE = 'Europe/Paris'
 DEFAULT_LANG = 'en'
@@ -18,9 +18,8 @@ CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 # TRANSLATION_FEED_ATOM = None
 # AUTHOR_FEED_ATOM = None
 # AUTHOR_FEED_RSS = None
-PAGE_URL = '{slug}.html'
-ARTICLE_URL = '{slug}.html'
-
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = '{slug}/index.html'
 # Blogroll
 LINKS = (('Writing', '/#writing'),)
 
@@ -46,14 +45,13 @@ CC_LICENSE = {
     'slug': 'by-sa'
 }
 COPYRIGHT_YEAR = datetime.now().year
-DEFAULT_PAGINATION = 10
 ROBOTS = 'index, follow'
 BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'pastie'
 SITETITLE = 'Brian Mc Donald'
 SITESUBTITLE = 'Humanitarian Information Management Specialist'
 SITEDESCRIPTION = 'Tips, thoughts and musings on humanitarian data analysis'
-PAGE_ORDER_BY = 'reversed-date'
+#PAGE_ORDER_BY = 'reversed-date'
 STATIC_PATHS = ['files/pdfs', 'files/other', 'files/images', 'extra/favicon.ico', 'extra/favicon-16x16.png']
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
@@ -63,4 +61,3 @@ EXTRA_PATH_METADATA = {
     'android-chrome-512x512.png': {'path': 'android-chrome-512x512.png'},
     'android-chrome-192x192.png': {'path': 'android-chrome-192x192.png'},
 }
-ROBOTS = "index, follow"
