@@ -7,16 +7,61 @@ Slug: reading
 Authors: Brian Mc Donald
 Summary: This page is an in-progress list of books that I've read or am currently reading. 
 
-I recently stumbled across [OpenLibrary.org][OpenLibrary.org], a site who's vision is to:
+Sometime in mid-202 I stumbled across [OpenLibrary.org][OpenLibrary.org], a site who's vision is to:
 
 > make all the published works of humankind available to everyone in the world. __-Open Library__ 
 
-The sites software and data (over 20 million records) are open source. The late [Aaron Swartz][Aaron Swartz] was involved in its creation. In support of this _public good_ ethos I decided to donate a small amount to them and suggest improvemnets on the sites Github repository. 
+The sites software and data (over 20 million records) are open source. The late [Aaron Swartz][Aaron Swartz] was involved in its creation. As the world's information and means of online communication move slowly under the control of large companies whose primary purpose is to sell advertising and to vaccum up our personal information. The _public good_ ethos of this site stand out at something to both value and to support. I encourage you to check it out and if you find it useful, to support the project either through donations or by helping them improve the platform
 
-Partially inspired by my girlfriend's log of books she has read (I think she has read over 60 books so far in 2020). I decided to begin the task of loggin books I have read, am reading now or am planning to read, and to use their [API][API] to show them on this page. It's still a work in progress, so only a few books appear for now. In the future I'll add short reviews for books that really grab my interest.
+I've started to log the books I've recently read in Open Library and will include below those I feel worth recommending. 
 
 [OpenLibrary.org]: https://openlibrary.org
 [API]: https://openlibrary.org/developers/api
 [Aaron Swartz]: https://en.wikipedia.org/wiki/Aaron_Swartz
 
-Books go here.....
+---
+
+<ul>
+<li>
+    <h3 class="title">
+        <a href="https://openlibrary.org/books/OL26202593M/Seeing_Like_a_State">Seeing Like a State</a>
+    </h3>
+    by     <span class="author">
+    <a href="https://openlibrary.org/authors/OL4398216A/James_C._Scott">James C. Scott</a>
+</span>
+
+
+    <div class="published">
+        1998-03-30, Yale University Press
+    </div>
+    <br>
+</li>
+<li>
+    <h3 class="title">
+        <a href="https://openlibrary.org/books/OL24763724M/Another_roadside_attraction">Another roadside attraction</a>
+    </h3>
+    by     <span class="author">
+    <a href="https://openlibrary.org/authors/OL32223A/Tom_Robbins">Tom Robbins</a>
+</span>
+
+
+    <div class="published">
+        1977-08, Ballantine Books
+    </div>
+    <br>
+</li>
+<li>
+    <h3 class="title">
+        <a href="https://openlibrary.org/books/OL24223376M/War_with_the_newts">War with the newts</a>
+    </h3>
+    by     <span class="author">
+    <a href="https://openlibrary.org/authors/OL4280557A/Karel_%C4%8Capek">Karel Čapek</a>
+</span>
+
+
+    <div class="published">
+        1959, Bantam Books
+    </div>
+    <br>
+</li>
+</ul>
