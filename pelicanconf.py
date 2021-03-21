@@ -18,8 +18,8 @@ CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 # TRANSLATION_FEED_ATOM = None
 # AUTHOR_FEED_ATOM = None
 # AUTHOR_FEED_RSS = None
-PAGE_URL = '{slug}/'
-PAGE_SAVE_AS = '{slug}/index.html'
+#PAGE_URL = '{slug}/'
+#PAGE_SAVE_AS = '{slug}/index.html'
 # Blogroll
 LINKS = (('Writing', '/#writing'),)
 
