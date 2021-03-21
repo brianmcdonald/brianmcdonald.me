@@ -24,6 +24,20 @@ I've started to log the books I've recently read in Open Library and will includ
 <ul>
 <li>
     <h3 class="title">
+        <a href="https://openlibrary.org/books/OL31680473M/Humanitarianism_and_the_Quantification_of_Human_Needs">Humanitarianism and the Quantification of Human Needs</a>
+    </h3>
+    by     <span class="author">
+    <em>Unknown authors</em>
+</span>
+
+
+    <div class="published">
+        2020, Routledge
+    </div>
+    <br>
+</li>
+<li>
+    <h3 class="title">
         <a href="https://openlibrary.org/books/OL26202593M/Seeing_Like_a_State">Seeing Like a State</a>
     </h3>
     by     <span class="author">

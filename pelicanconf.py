@@ -18,6 +18,8 @@ CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 # TRANSLATION_FEED_ATOM = None
 # AUTHOR_FEED_ATOM = None
 # AUTHOR_FEED_RSS = None
+PAGE_URL = '{slug}'
+ARTICLE_URL = '{slug}'
 
 # Blogroll
 LINKS = (('Writing', '/#writing'),)
@@ -50,7 +52,7 @@ BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'pastie'
 SITETITLE = 'Brian Mc Donald'
 SITESUBTITLE = 'Humanitarian Information Management Specialist'
-SITEDESCRIPTION = 'Sharing my thoughts on humanitarian data analysis'
+SITEDESCRIPTION = 'Tips, thoughts and musings on humanitarian data analysis'
 PAGE_ORDER_BY = 'reversed-date'
 STATIC_PATHS = ['files/pdfs', 'files/other', 'files/images', 'extra/favicon.ico', 'extra/favicon-16x16.png']
 EXTRA_PATH_METADATA = {
