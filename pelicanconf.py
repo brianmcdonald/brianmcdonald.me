@@ -18,8 +18,8 @@ CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 # TRANSLATION_FEED_ATOM = None
 # AUTHOR_FEED_ATOM = None
 # AUTHOR_FEED_RSS = None
-#PAGE_URL = '{slug}'
-#ARTICLE_URL = '{slug}'
+PAGE_URL = '{slug}.html'
+ARTICLE_URL = '{slug}.html'
 
 # Blogroll
 LINKS = (('Writing', '/#writing'),)
