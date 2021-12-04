@@ -19,7 +19,7 @@ The side illustration is from an OCHA/Information Management Working Group docum
 I started this website as a way to improve my writing skills and to work on synthesizing some of what I've been learning into articulate thoughts that can be of help to future me or others.
 I lament the loss of much of the independent expression of content on the internet these days, with our communications and expressions mediated by the platforms of multi-billion dollar companies and incentives driven by advertising and increased consumption. This blog is a chance for me to craft something that is both independent from these "mediators" and specific to my needs and specifications. 
 
-*Why does this website website load fast and doesn't have those annoying cookie popups?*  
+**Why does this website website load fast and doesn't have those annoying cookie popups?**
   
 As per the [GDPR][GDPR], those cookie consent boxes are only required if a website tracks your sessions. Nothing on this site tracks its users, allowing the site to focus on being a fast and somewhat less user hostile experience.
 
