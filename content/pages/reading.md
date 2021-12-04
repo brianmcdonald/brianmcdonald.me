@@ -7,7 +7,7 @@ Slug: reading
 Authors: Brian Mc Donald
 Summary: This page is an in-progress list of books that I've read or am currently reading. 
 
-Sometime in mid-202 I stumbled across [OpenLibrary.org][OpenLibrary.org], a site who's vision is to:
+Sometime in mid-2020 I stumbled across [OpenLibrary.org][OpenLibrary.org], a site with a vision to:
 
 > make all the published works of humankind available to everyone in the world. __-Open Library__ 
 
