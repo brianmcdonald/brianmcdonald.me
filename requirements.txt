@@ -3,7 +3,9 @@ colorama==0.4.4
 commonmark==0.9.1
 docutils==0.18.1
 feedgenerator==2.0.0
+ghp-import==2.0.2
 importlib-metadata==4.8.2
+invoke==1.6.0
 Jinja2==3.0.3
 Markdown==3.3.6
 MarkupSafe==2.0.1
