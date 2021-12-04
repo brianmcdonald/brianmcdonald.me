@@ -28,7 +28,7 @@ The technical details of this site - it's built using [Python][Python] and the s
 ## Contact me
 If you would like to write to me to point out any typos, criticisms, suggestions, comments on my writing, or any other constructive forms of human interaction, you can contact me at [brian@brianmcdonald.me](mailto:brian@brianmcdonald.me).
 
-For security, here is my gpg key: [```9387 9F64 2C28 E640 4E00  D551 5CFF ED2F 870F 0268```](/files/other/public.pgp)
+If you wish to communicate with me securely, my gpg key is: [```9387 9F64 2C28 E640 4E00  D551 5CFF ED2F 870F 0268```](/files/other/public.pgp)
 [Johkang Temple]: https://en.wikipedia.org/wiki/Jokhang
 [GDPR]: https://en.wikipedia.org/wiki/General_Data_Protection_Regulation
 [Python]: https://www.python.org/
