@@ -35,7 +35,6 @@ DEFAULT_PAGINATION = False
 PLUGINS = [
             'minchin.pelican.plugins.cname',
           ]
-#PLUGINS = ['minchin.pelican.plugins.post_stats','similar_posts']
 DEFAULT_CATEGORY = 'General'
 TYPOGRIFY = True
 THEME = 'themes/brian'
