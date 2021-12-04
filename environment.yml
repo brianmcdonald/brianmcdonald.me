@@ -1,9 +1,0 @@
-name: brianmcdonald.me
-channels:
-  - defaults
-dependencies:
-  - pip
-  - ipython
-  - pycodestyle
-prefix: /Users/brian/miniconda3/envs/brianmcdonald.me
-
