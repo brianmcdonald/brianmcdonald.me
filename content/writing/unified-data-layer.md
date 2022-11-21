@@ -11,8 +11,8 @@ Summary: Common Operating Datasets in humanitarian analysis are amazing.... so l
 ![painting](../files/images/501450ldsdl.jpg)
 *A Capriccio of Roman Ruins (1727-1729) by Marco Ricci*
 
-## Common Operating Datasets (CODs)
-The work done on Common Operating Datasets has been one of the most important advances in information management in humanitarian response in the past 20 years.
+## Common Operating Datasets
+The work done on Common Operating Datasets (CODs) has been one of the most important advances in information management in humanitarian response in the past 20 years.
 
 Common Operating Datasets are typically country level administrative and population figures....
 They are the basic building blocks of a response. They are a great example of coordination of information management, with all agencies and NGOs using them.
@@ -29,9 +29,9 @@ But the purpose of this post is not just to praise the CODs, it's to discuss alt
 ## Unified data layer
 - use when dealing with larger data.
 
-- example use in Pakistan
+- example use in Pakistan - climate indicators, distributions, camps, old boundaries
 
-- limitations
+- limitations - cells may not have desired homogeneity that other area classifications have and may not align with administrative structures or topography. 
 
 - conclusion
 
