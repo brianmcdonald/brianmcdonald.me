@@ -29,6 +29,8 @@ But the purpose of this post is not just to praise the CODs, it's to discuss alt
 ## Unified data layer
 - use when dealing with larger data.
 
+- comparing to choropleth visual misleadind
+
 - example use in Pakistan - climate indicators, distributions, camps, old boundaries
 
 - limitations - cells may not have desired homogeneity that other area classifications have and may not align with administrative structures or topography. 
