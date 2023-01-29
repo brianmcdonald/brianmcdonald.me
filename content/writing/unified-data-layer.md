@@ -40,26 +40,31 @@ One approach we can use that addresses or sidesteps the problems above to sepera
 
 There are many ways other than CODs that can be used to seperate and represent different geographic units, many reach back thousands of years [footnote mandala ] but in the past few years, with the growth in web-based mapping, large scale analytics and the explosion of geo-associated data, some interesting approaches have emegerged that are showing a lot of potential for humanitarian action.
 
-![quadkeys](../files/images/quadkeys.jpg)
+![quadkeys](../files/images/quadkeys.png)
 
 The first of these are **Quadkeys** an approach to geospatial indexing, developed by Microsoft that divided the world into gridded squares [add footnote of Mercator projection limitation] with the size of each square corresponding to an index level. Each square can be subdivided further through subsequent lower levels, allowing one square to represent over 78,271 m2 at its highest level, or 0.0187 m2 at its lowest level. 
 
 The second is **H3**, a similar concept, using hexagons. Developed by Uber, it provide a base for their vast geospatial analytic needs on car pickups, movements, routing etc. 
 ![h3geo](../files/images/H3geo.jpeg) 
    
-- how they address the 5 problems.
+## Their advantages
 
-## Unified data layer
-- use when dealing with larger data.
+These two approaches ovecome many of the drawbacks of the CODs as:
 
-- comparing to choropleth visual misleading
+- the resolution/granularity is set to whatever unit that best suits the analysis, or which best matches the available data.
 
-- example use in Pakistan - climate indicators, distributions, camps, old boundaries
+- each quadkey/hex remains consistent and are inherently immune to disputes over their boundaries or names.
 
-- limitations - cells may not have desired homogeneity that other area classifications have and may not align with administrative structures or topography. 
+- for any given quadkey/hex value, their areas remain consistent and comparable [add footnote explaining limatations/approximations due to CRS], 
 
-- conclusion
+- they don't change; a quadkey of data from 100 years can be compared against a quadkey of data 100 years from now, regardless of any changes in administrative boundaries or naming conventions.
 
-- footnote explaining that the claims of the demise of CODs are premature, but they will likely live alongside each other. Hyperpole, but, need to be able to better run analysis across time and space. Climate research is approaching this by using the concept of a data cube, where phenomena can be easily analyzed on multiple dimensions, over geography and time.
+- they offer a means to sidestep the issue of politics intertwined with geography.
 
-- 
+- they encourage privacy-preserving best practices for data analysis. 
+
+## Unified data-layer examples
+
+*I'll add the examples and conclude this post shortly. Check back here in a couple of days*
+
+
