@@ -40,12 +40,12 @@ One approach we can use that addresses or sidesteps the problems above to sepera
 
 There are many ways other than CODs that can be used to seperate and represent different geographic units, many reach back thousands of years [footnote mandala ] but in the past few years, with the growth in web-based mapping, large scale analytics and the explosion of geo-associated data, some interesting approaches have emegerged that are showing a lot of potential for humanitarian action.
 
-![quadkeys](/files/images/quadkeys.png)
+![quadkeys](../files/images/quadkeys.png)
 
 The first of these are **Quadkeys** an approach to geospatial indexing, developed by Microsoft that divided the world into gridded squares [add footnote of Mercator projection limitation] with the size of each square corresponding to an index level. Each square can be subdivided further through subsequent lower levels, allowing one square to represent over 78,271 m2 at its highest level, or 0.0187 m2 at its lowest level. 
 
 The second is **H3**, a similar concept, using hexagons. Developed by Uber, it provide a base for their vast geospatial analytic needs on car pickups, movements, routing etc. 
-![h3geo](/files/images/H3geo.jpeg) 
+![h3geo](../files/images/H3geo.PNG) 
    
 ## Their advantages
 
