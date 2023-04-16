@@ -40,7 +40,7 @@ One approach we can use that addresses or sidesteps the problems above to sepera
 
 There are many ways other than CODs that can be used to seperate and represent different geographic units, many reach back thousands of years [footnote mandala ] but in the past few years, with the growth in web-based mapping, large scale analytics and the explosion of geo-associated data, some interesting approaches have emegerged that are showing a lot of potential for humanitarian action.
 
-![quadkeys](../files/images/quadkeys.png)
+![quadkeys](../files/images/quadkeys.jpg)
 
 The first of these are **Quadkeys** an approach to geospatial indexing, developed by Microsoft that divided the world into gridded squares [add footnote of Mercator projection limitation] with the size of each square corresponding to an index level. Each square can be subdivided further through subsequent lower levels, allowing one square to represent over 78,271 m2 at its highest level, or 0.0187 m2 at its lowest level. 
 
@@ -63,8 +63,12 @@ These two approaches ovecome many of the drawbacks of the CODs as:
 
 - they encourage privacy-preserving best practices for data analysis. 
 
-## Unified data-layer examples
+## The possibilities
 
-*I'll add the examples and conclude this post shortly. Check back here in a couple of days*
+Imagine if, instead of struggling to reconcile development data that uses outdated admin boundaries into your humanitarian datset you can combine them seamlessly. Imagine, instead of using choropleths at wide admin-levels to show NGO partner presence you present their presence as H3 cells at a resolution that better matches the catchment area of the services they are providding. Imagine being able to easily consolidate all your data, from demographics, displacement data, climate data, hazard risk data, household vulnerability data, to the same geographic unit of analysis to better inform prioritization and targeting of interventions.
+
+If you are interested in finding out more about the unified data layer approach or would like to help me devlop tools to accelerate its use, or is you have examples that you would lik to share, please get in touch with me.
+
+**Note:** The start of this post presents unified data layers as a replacement to CODs. This is done more more for shock value, to stimulate conversation, than in a belief that they could or should replace CODs. Using admin-levels is preferrable much of the time as there is a clear need to understand and responded using geographic administrative structures that countries use to administer and govern.
 
 
