@@ -5,8 +5,8 @@ Tags: analysis, python, xlsform, kobo
 Category: 
 Slug: XLSform-filler-data
 Author: Brian
-Status: draft
-Summary: A tool for creating test data for testing and drafting analysis-plans. 
+Status: published
+Summary: A tool for creating sample data for testing and drafting analysis-plans. 
 
 ## The Problem
 
@@ -14,15 +14,18 @@ Analysis tools such as Python and R provide many benefits for humaniatarian anal
 Another of their strengths is how it enables faster turn-around on analyitical prouducts due to its reuse of code and methods. This is the case in situations where the analytical product design remains very close to previous examples, but what about the many cases cases where the output analysis needs to be adjusted to fit the context or a new methodology or mix of methods. In these cases one of the most limiting factors in the analysis turnaround time is the period where the analyst needs to wait for data inputs or produce example data in order to start develoing their data analysis plan or draft their analysis. 
 A tool that can simulate data can radically reduce the time between data collection and the production date of its analytical outputs. 
 
-## Introducing XLSform filler data, a tool for creating sample data based on XLSform forms.  
+## A Solution
 
 That's what *XLSform filler data* aim to accomplish. Using as an input, an XLSform survey, the tool creates a sample survey dataset which can be used in generating a analysis plan and drafting of the initial analysis, allowing the analyst to prepare the descriptive analysis sections in advance of the data collection period, freeing the analyst up to focus on the higher levels of the analysis spectrum, the explanations, the interpretations, the anticipations and the prescriptions. 
 
 The tool is written in and is focused on the Python ecosystem. its published on PyPi and can be installed with the following command '''pip install XLSform-data-filler'''.
 
-An example of it in use would be '''zzz'''
+## Usage
+To create a dummy dataset, with a default number of rows(100) from a XLSform source: '''xlsform-filler-data <source-file-path>/<filename.xlsx>'''
+To specify the number of rows to create, use the -r flag. Example: '''xlsform-filler-data <source-file-path>/<filename.xlsx> -r 200'''
+To specify the output path and filename, pass the -o flag. Example: '''xlsform-filler-data <source-file-path>/<filename.xlsx> -o <./myfile.xlsx>'''
 
-The tool is still very much in an Alpha phase. Current limitations include ...
-I plan to improve the tool shortly so if you have any suggestions or feedback, let me know. 
+## Roadmap
+As of version 0.1.1 the tool does not properly randomise multiple choice questions; omits some variables such as 'start' and 'end'; does not maintain the order of the variables; and does not incorporate constraints or cascading choice lists. These limitations will be adddressed in future releases.
 
 
