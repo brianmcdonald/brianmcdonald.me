@@ -1,8 +1,8 @@
 Title: Introducing XLSform filler data
 Date: 2023-07-22 18:35
 Modified: 2023-07-22 18:35
-Tags: analysis, python, xlsform, kobo
-Category: 
+Tags: analysis, python, xlsform, kobo, software
+Category: General
 Slug: XLSform-filler-data
 Author: Brian
 Status: published
