@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="./theme/fonts/fonts.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/pastie.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://brianmcdonald.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Brian Mc Donald Atom">
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Brian Mc Donald" />
+<meta name="description" content="Common Operating Datasets in humanitarian analysis are amazing…. so lets replace them" />
+<meta name="keywords" content="geospatial, deckgl, h3, quadkeys, analysis">
+
+<meta property="og:site_name" content="Brian Mc Donald"/>
+<meta property="og:title" content="Towards Unified Data Layers"/>
+<meta property="og:description" content="Common Operating Datasets in humanitarian analysis are amazing…. so lets replace them"/>
+<meta property="og:locale" content="en_IE"/>
+<meta property="og:url" content="./unified-data-layers.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2022-10-27 19:40:00+02:00"/>
+<meta property="article:modified_time" content="2023-04-16 14:04:00+02:00"/>
+<meta property="article:author" content="./author/brian-mc-donald.html">
+<meta property="article:section" content="General"/>
+<meta property="article:tag" content="geospatial"/>
+<meta property="article:tag" content="deckgl"/>
+<meta property="article:tag" content="h3"/>
+<meta property="article:tag" content="quadkeys"/>
+<meta property="article:tag" content="analysis"/>
+<meta property="og:image" content="">
+
+  <title>Brian Mc Donald &ndash; Towards Unified Data Layers</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="./theme/img/profile.png" alt="Brian Mc Donald" title="Brian Mc Donald">
+      </a>
+      <h1><a href=".">Brian Mc Donald</a></h1>
+
+<p>Humanitarian Information Management Specialist</p>
+      <nav>
+        <ul class="list">
+          <li><a href="./about.html#about">About</a></li>
+          <li><a href="./reading.html#reading">Reading</a></li>
+
+          <li><a href="/#writing" target="_blank">Writing</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+	<li><a class="sc-rss" href="feeds/all.atom.xml" target="_blank" aria-label="rss" rel="noreferrer"><i class="fa fa-rss"></i></a></li>
+	<li><a class="sc-github" href="https://github.com/brianmcdonald" target="_blank" aria-label="github" rel="noreferrer"><i class="fa fa-github"></i></a></li>
+	<li><a class="sc-linkedin" href="https://www.linkedin.com/in/brian-mc-donald-1b8a4013/" target="_blank" aria-label="linkedin" rel="noreferrer"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+        </div>
+  </aside>
+  <main>
+<article class="single">
+  <header>
+      
+    <h1 id="unified-data-layers">Towards Unified Data&nbsp;Layers</h1>
+    <p>
+          Posted on Thu 27 October 2022 in <a href="./category/general.html">General</a>
+
+
+    </p>
+  </header>
+
+  <div>
+    <p><img alt="painting" src="../files/images/501450ldsdl.jpg">
+<em>A Capriccio of Roman Ruins (1727-1729) by Marco&nbsp;Ricci</em></p>
+<p><em>The opinions below, as always, are mine alone, and do not represent my employer&#8217;s, past or&nbsp;present.</em></p>
+<h2>Common Operating&nbsp;Datasets</h2>
+<p>The work done on Common Operating Datasets (CODs) has been one of the most important advances in information management in humanitarian response in the past 20&nbsp;years.</p>
+<p>Common Operating Datasets are typically country level administrative boundaries and population statistics. They are the basic building blocks of a response. In an emergency, with hundreds of organizations and government departments working together, they provide a common point of reference for geographical representation of areas and population  within a country. In countries where there is a <span class="caps">UNOCHA</span> presence, they usually take the lead in the publishing of that country&#8217;s CODs, in coordination with the relevant government statistics office and relevant partners, revising and updating as needed. CODs are probably the most successful example of coordination of information management. [footnote link to Andrew Verity recent&nbsp;publication]</p>
+<p>But&#8230; the purpose of this post is not just to praise the work on CODs, it&#8217;s to demonstrate emerging alternatives that overcome many of the issues we face with&nbsp;CODs. </p>
+<h3>So what&#8217;s wrong with the&nbsp;CODs?</h3>
+<p><strong>The CODs are not always available at a level of granularity sufficient for detailed analysis.</strong> While admin 0 (national-level), admin 1 (typically provincial-level or similar), and admin 2 (typically district-level or similar) can be expected to present in any response with a <span class="caps">UNOCHA</span> presence, there can be less of an assumption of availability for the more granular levels of admin 3, 4 or lower. This presents a challenge as analysis may then be presenting analysis at a coarser level of aggregation that may not effectively capture or show differences in needs, gaps or response that a more granular administrative and population would&nbsp;support.</p>
+<p><strong>Admin boundaries are often disputed.</strong> While many national boundaries are disputed, to varying degrees [ footnote of how many, from Wikipedia] this generally isn&#8217;t a huge issue in most humanitarian responses. In comparison to, the challenge of different perspectives on sub-national boundaries within countries. This can lead to a situation where, depending on engagement at the national level, or with subnational authorities, different datasets may be needed, top reflect of the differing perspectives of what area or people that are being referred to. For compiling data, this means the added complexity of needing to know the context of the data received, to understand the perspectives of the data and the assumptions behind&nbsp;it.</p>
+<p><strong>High variation in the area and population that a <span class="caps">COD</span> unit is referring to.</strong> As mentioned above, the number of admin levels in a country can vary, what varies even greater, is the geographic area that <span class="caps">COD</span> units represent across countries. An analysis, that may be sufficiently granular in one country, may need to be at admin 3 or 4 in another to provide a similar analysis. While a typical analysis product may have a geographical area that may be optimal for the type of analysis, quite often this has to first match the closest available admin boundaries and population, assuming all required data is also available for&nbsp;this. </p>
+<p>Within a single country, this variation in admin unit size can lead to misinterpretation of data when visualizing data. A common example of this is with the use of chloropleth maps. Considering two aspects of visual perception - colour and size, chloropleth&#8217;s often mislead, showing comparatively larger admin areas more prominently, even though their value (colour) may be the same or less. This misuse of choropleth graphics probably deserves an article by itself. [footnote showing the km2 area of the largest admin 3 and smallest admin2 from the&nbsp;CODs]</p>
+<p><strong>CODs are constantly changing</strong>, they are living datasets that periodically need updating to reflect administrative changes and population changes in a country. These administrative changes can mean that data from previous years may no longer be compatible with that which was gathered in different years [footnote Pakistan example of admin 1 changes] Currently the <span class="caps">COD</span>&#8217;s don&#8217;t have a process for version control, meaning that the changes of each iteration may not be known, meaning that datasets associated with previous <span class="caps">COD</span> versions may no longer be compatible, or may require significant data transformations or may contain a number of hidden&nbsp;assumptions.</p>
+<p><strong>Demographics and administrative boundaries are intertwined with politics.</strong> Administrative boundaries are, as the name suggests, reflect the administrative structure of a country. They are a cartographic manifestation of much of our countries historic dynamics, current political dynamics, especially in conflict situations, can themselves be drivers, or at least contentious within the context. The close link of the geographic and the political in-turn influences any analysis that uses them. Even in non, or low-conflict contexts, this can still mean challenges, such as delays in publishing or updating datasets due to bureaucracy or otherwise. [ footnote Idai&nbsp;example]  </p>
+<h2>Introducing H3 and Bing&nbsp;quadkeys</h2>
+<p>One approach we can use that addresses or sidesteps the problems above to separate political <span class="amp">&amp;</span> administrative with geographic concerns and base our geographic units of analysis on units that are consistent no matter what country, context or period the data is&nbsp;from.  </p>
+<p>There are many ways other than <span class="caps">COD</span>&#8217;s that can be used to separate and represent different geographic units, many reach back thousands of years [footnote mandala ] but in the past few years, with the growth in web-based mapping, large-scale analytics and the explosion of geo-associated data, some interesting approaches have emerged that are showing a lot of potential for humanitarian&nbsp;action.</p>
+<p><img alt="quadkeys" src="../files/images/quadkeys.jpg"></p>
+<p>The first of these are <strong>Quadkeys</strong> an approach to geospatial indexing, developed by Microsoft, that divided the world into gridded squares [add footnote of Mercator projection limitation] with the size of each square corresponding to an index level. Each square can be subdivided further through subsequent lower levels, allowing one square to represent over 78,271 m2 at its highest level, or 0.0187 m2 at its lowest&nbsp;level. </p>
+<p>The second is <strong>H3</strong>, a similar concept, using hexagons. Developed by Uber, it provides a base for their vast geospatial analytic needs on car pickups, movements, routing etc. 
+<img alt="h3geo" src="../files/images/H3geo.PNG"> </p>
+<h2>Their&nbsp;advantages</h2>
+<p>These two approaches overcome many of the drawbacks of the CODs&nbsp;as:</p>
+<ul>
+<li>
+<p>the resolution/granularity is set to whatever unit that best suits the analysis, or which best matches the available&nbsp;data.</p>
+</li>
+<li>
+<p>each quadkey/hex remains consistent and are inherently immune to disputes over their boundaries or&nbsp;names.</p>
+</li>
+<li>
+<p>for any given quadkey/hex value, their areas remain consistent and comparable [add footnote explaining limitations/approximations due to <span class="caps">CRS</span>], </p>
+</li>
+<li>
+<p>they don&#8217;t change; a quadkey of data from 100 years can be compared against a quadkey of data 100 years from now, regardless of any changes in administrative boundaries or naming&nbsp;conventions.</p>
+</li>
+<li>
+<p>they offer a means to sidestep the issue of politics intertwined with&nbsp;geography.</p>
+</li>
+<li>
+<p>they encourage privacy-preserving best practices for data&nbsp;analysis. </p>
+</li>
+</ul>
+<h2>The&nbsp;possibilities</h2>
+<p>Imagine if, instead of struggling to reconcile development data that uses outdated admin boundaries into your humanitarian dataset, you can combine them seamlessly. Imagine, instead of using choropleths at wide admin-levels to show <span class="caps">NGO</span> partner presence, you present their presence as H3 cells at a resolution that better matches the catchment area of the services they are providing. Imagine being able to easily consolidate all your data, from demographics, displacement data, climate data, hazard risk data, household vulnerability data, to the same geographic unit of analysis to better inform prioritization and targeting of&nbsp;interventions.</p>
+<p>If you are interested in finding out more about the unified data layer approach or would like to help me develop tools to accelerate its use, or if you have examples that you would like to share, please get in touch with&nbsp;me.</p>
+<p><strong>Note:</strong> The start of this post presents unified data layers as a replacement to <span class="caps">COD</span>&#8217;s. This is done more for shock value, to stimulate conversation, than in a belief that they could or should replace <span class="caps">COD</span>&#8217;s. Using admin-levels is preferable much of the time, as there is a clear need to understand and respond using geographic administrative structures that countries use to administer and&nbsp;govern.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/geospatial.html">geospatial</a>
+      <a href="./tag/deckgl.html">deckgl</a>
+      <a href="./tag/h3.html">h3</a>
+      <a href="./tag/quadkeys.html">quadkeys</a>
+      <a href="./tag/analysis.html">analysis</a>
+    </p>
+  </div>
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy;  2024 - This work is licensed under a <a rel="license noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>
+  <a rel="license noreferrer"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank"
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0" 
+         src="./theme/img/cc/by-sa.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Brian Mc Donald ",
+  "url" : ".",
+  "image": "",
+  "description": "Tips, thoughts and musings on humanitarian data analysis"
+}
+</script></body>
+</html>
