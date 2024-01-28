@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="./theme/fonts/fonts.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/pastie.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://brianmcdonald.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Brian Mc Donald Atom">
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Brian" />
+<meta name="description" content="A tool for creating sample data for testing and drafting analysis-plans." />
+<meta name="keywords" content="analysis, python, xlsform, kobo">
+
+<meta property="og:site_name" content="Brian Mc Donald"/>
+<meta property="og:title" content="Introducing XLSform filler data"/>
+<meta property="og:description" content="A tool for creating sample data for testing and drafting analysis-plans."/>
+<meta property="og:locale" content="en_IE"/>
+<meta property="og:url" content="./XLSform-filler-data.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2023-07-22 18:35:00+02:00"/>
+<meta property="article:modified_time" content="2023-07-22 18:35:00+02:00"/>
+<meta property="article:author" content="./author/brian.html">
+<meta property="article:section" content="writing"/>
+<meta property="article:tag" content="analysis"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="xlsform"/>
+<meta property="article:tag" content="kobo"/>
+<meta property="og:image" content="">
+
+  <title>Brian Mc Donald &ndash; Introducing XLSform filler data</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="./theme/img/profile.png" alt="Brian Mc Donald" title="Brian Mc Donald">
+      </a>
+      <h1><a href=".">Brian Mc Donald</a></h1>
+
+<p>Humanitarian Information Management Specialist</p>
+      <nav>
+        <ul class="list">
+          <li><a href="./about.html#about">About</a></li>
+          <li><a href="./reading.html#reading">Reading</a></li>
+
+          <li><a href="/#writing" target="_blank">Writing</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+	<li><a class="sc-rss" href="feeds/all.atom.xml" target="_blank" aria-label="rss" rel="noreferrer"><i class="fa fa-rss"></i></a></li>
+	<li><a class="sc-github" href="https://github.com/brianmcdonald" target="_blank" aria-label="github" rel="noreferrer"><i class="fa fa-github"></i></a></li>
+	<li><a class="sc-linkedin" href="https://www.linkedin.com/in/brian-mc-donald-1b8a4013/" target="_blank" aria-label="linkedin" rel="noreferrer"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+        </div>
+  </aside>
+  <main>
+<article class="single">
+  <header>
+      
+    <h1 id="XLSform-filler-data">Introducing XLSform filler&nbsp;data</h1>
+    <p>
+          Posted on Sat 22 July 2023 in <a href="./category/writing.html">writing</a>
+
+
+    </p>
+  </header>
+
+  <div>
+    <h2>The&nbsp;Problem</h2>
+<p>Analysis tools such as Python and R provide many benefits for humaniatarian analysis. They provide reproducilble analysis flows which are great for collaborative analysis, provide an approach than can build reuse and build upon prior analysis and importantly, provide an auditable, robust and reproducible&nbsp;approach. </p>
+<p>Another of their strengths is how it enables faster turn-around on analyitical prouducts due to its reuse of code and methods. This is the case in situations where the analytical product design remains very close to previous examples, but what about the many cases cases where the output analysis needs to be adjusted to fit the context or a new methodology or mix of methods. In these cases one of the most limiting factors in the analysis turnaround time is the period where the analyst needs to wait for data inputs or produce example data in order to start develoing their data analysis plan or draft their&nbsp;analysis. </p>
+<p>A tool that can simulate data can radically reduce the time between data collection and the production date of its analytical&nbsp;outputs. </p>
+<h2>A&nbsp;Solution</h2>
+<p>That&#8217;s what <em>XLSform filler data</em> aim to accomplish. Using as an input, an XLSform survey, the tool creates a sample survey dataset which can be used in generating a analysis plan and drafting of the initial analysis, allowing the analyst to prepare the descriptive analysis sections in advance of the data collection period, freeing the analyst up to focus on the higher levels of the analysis spectrum, the explanations, the interpretations, the anticipations and the&nbsp;prescriptions. </p>
+<p>The tool is written in and is focused on the Python ecosystem. its published on PyPi and can be installed with the following command <code>pip install XLSform-data-filler</code>.</p>
+<h2>Usage</h2>
+<p>To create a dummy dataset, with a default number of rows(100) from a XLSform source: <code>xlsform-filler-data &lt;source-file-path&gt;/&lt;filename.xlsx&gt;</code>
+To specify the number of rows to create, use the -r flag. Example: <code>xlsform-filler-data &lt;source-file-path&gt;/&lt;filename.xlsx&gt; -r 200</code>
+To specify the output path and filename, pass the -o flag. Example: <code>xlsform-filler-data &lt;source-file-path&gt;/&lt;filename.xlsx&gt; -o &lt;./myfile.xlsx&gt;</code></p>
+<h2>Roadmap</h2>
+<p>As of version 0.1.1 the tool does not properly randomise multiple choice questions; omits some variables such as &#8216;start&#8217; and &#8216;end&#8217;; does not maintain the order of the variables; and does not incorporate constraints or cascading choice lists. These limitations will be adddressed in future&nbsp;releases.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/analysis.html">analysis</a>
+      <a href="./tag/python.html">python</a>
+      <a href="./tag/xlsform.html">xlsform</a>
+      <a href="./tag/kobo.html">kobo</a>
+    </p>
+  </div>
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy;  2024 - This work is licensed under a <a rel="license noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>
+  <a rel="license noreferrer"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank"
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0" 
+         src="./theme/img/cc/by-sa.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Brian Mc Donald ",
+  "url" : ".",
+  "image": "",
+  "description": "Tips, thoughts and musings on humanitarian data analysis"
+}
+</script></body>
+</html>
