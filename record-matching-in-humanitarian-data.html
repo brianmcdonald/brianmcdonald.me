@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="./theme/fonts/fonts.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/pastie.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://brianmcdonald.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Brian Mc Donald Atom">
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Brian Mc Donald" />
+<meta name="description" content="Using approaches such as ‘probilistic record linkage’ to join humanitarian datasets." />
+<meta name="keywords" content="python, information management">
+
+<meta property="og:site_name" content="Brian Mc Donald"/>
+<meta property="og:title" content="Record matching in humanitarian data"/>
+<meta property="og:description" content="Using approaches such as ‘probilistic record linkage’ to join humanitarian datasets."/>
+<meta property="og:locale" content="en_IE"/>
+<meta property="og:url" content="./record-matching-in-humanitarian-data.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-09-20 14:29:00+02:00"/>
+<meta property="article:modified_time" content="2020-09-20 14:29:00+02:00"/>
+<meta property="article:author" content="./author/brian-mc-donald.html">
+<meta property="article:section" content="How-to"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="information management"/>
+<meta property="og:image" content="">
+
+  <title>Brian Mc Donald &ndash; Record matching in humanitarian data</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="./theme/img/profile.png" alt="Brian Mc Donald" title="Brian Mc Donald">
+      </a>
+      <h1><a href=".">Brian Mc Donald</a></h1>
+
+<p>Humanitarian Information Management Specialist</p>
+      <nav>
+        <ul class="list">
+          <li><a href="./about.html#about">About</a></li>
+          <li><a href="./reading.html#reading">Reading</a></li>
+
+          <li><a href="/#writing" target="_blank">Writing</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+	<li><a class="sc-rss" href="feeds/all.atom.xml" target="_blank" aria-label="rss" rel="noreferrer"><i class="fa fa-rss"></i></a></li>
+	<li><a class="sc-github" href="https://github.com/brianmcdonald" target="_blank" aria-label="github" rel="noreferrer"><i class="fa fa-github"></i></a></li>
+	<li><a class="sc-linkedin" href="https://www.linkedin.com/in/brian-mc-donald-1b8a4013/" target="_blank" aria-label="linkedin" rel="noreferrer"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+        </div>
+  </aside>
+  <main>
+<article class="single">
+  <header>
+      
+    <h1 id="record-matching-in-humanitarian-data">Record matching in humanitarian&nbsp;data</h1>
+    <p>
+          Posted on Sun 20 September 2020 in <a href="./category/how-to.html">How-to</a>
+
+
+    </p>
+  </header>
+
+  <div>
+    <p>A reoccurring scenario in information management in humanitarian response is one where you have to compile messy data from a number of disparate sources within a very short time window. This post is an attempt to summarise some of the tools and approaches I use to tackle this&nbsp;problem.</p>
+<h2>Excel: <span class="caps">VLOOKUP</span>, <span class="caps">XLOOKUP</span> and <span class="caps">INDEXMATCH</span></h2>
+<p>While I wont cover them here, using <a href="https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1"><span class="caps">VLOOKUP</span></a>, <a href="https://support.microsoft.com/en-us/office/look-up-values-with-vlookup-index-or-match-68297403-7c3c-4150-9e3c-4d348188976b"><span class="caps">INDEX</span> <span class="caps">MATCH</span></a> and the newer <a href="https://support.microsoft.com/en-us/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929"><span class="caps">XLOOKUP</span></a> in Excel are really useful formula when trying to combine different datasets in Excel. Learning these for the first time really feels like unlocking an analysis&nbsp;superpower. </p>
+<div class="highlight"><pre><span></span><code>=XLOOKUP (lookup, lookup_array, return_array)
+</code></pre></div>
+
+<p>When using <span class="caps">VLOOKUP</span> or <span class="caps">XLOOKUP</span> you can shoose to use &#8216;<span class="caps">FALSE</span>&#8221; at the end of the formula or &#8216;<span class="caps">TRUE</span>&#8217; to find an approximate match. &#8216;<span class="caps">TRUE</span>(exact match)&#8217; uses a linear search algorithm to step through the values looking for an exact match using a linear search algorithm. &#8216;<span class="caps">FALSE</span>(approximate match)&#8217; is perhaps somewhat misleading, as it doesnt match the closest textual match, but rather, returns the second highest value. It uses a binary search algoritms to continually search at the mid-point value. While this may be faster, it only works on sorted numerical data and if an exact match isnt found it returns the second largest&nbsp;value.</p>
+<h2>Excel fuzzy&nbsp;matching</h2>
+<p>This is not terribly useful. What we are looking for is something more powerful, which can help match text with slight spelling discrepencies or can search for matches acrosss multiple columns. The tool we need is called Fuzzy Matching, or more boardly speaking <a href="https://en.wikipedia.org/wiki/Record_linkage#Probabilistic_record_linkage">Probabilistic record linkage</a>. This works by assigning a a probability score that the text in one cell matches another, based on a chosen method. Recently  Microsoft released a tool to <a href="https://support.microsoft.com/en-us/office/fuzzy-match-support-for-get-transform-power-query-ffdd5082-c0c8-4c8e-a794-bd3962b90649">merge tables using fuzzy matching</a> (windows only). This allows you to set the following matching&nbsp;options:</p>
+<ol>
+<li>
+<p>Similarity Threshold – This option indicates how similar two values need to be in order to match. The minimum value of 0.00 will cause all values to match each other, and the maximum value of 1.00 will only allow exact matches. The default is&nbsp;0.80.</p>
+</li>
+<li>
+<p>Ignore case – This option indicates whether text values should be compared in a case sensitive or insensitive setting. The default behavior is case insensitive, which ignores&nbsp;casing.</p>
+</li>
+<li>
+<p>Maximum number of matches – This option controls the maximum number of matching rows that will be returned for each input row. For example, if you only want to find one matching row for each input row, specify a value of 1. The default behavior is to return all&nbsp;matches.</p>
+</li>
+<li>
+<p>Transformation table – This option allows users to specify another query that holds a mapping table, so that some values can be auto-mapped as part of the matching logic. For example, defining a two-column table with a “From” and “To” text columns with values “Microsoft” and “<span class="caps">MSFT</span>” will make these two values be considered the same (similarity score of 1.00) by the matching&nbsp;logic.</p>
+</li>
+</ol>
+<h2>Record matching using&nbsp;Python</h2>
+<p>If you want more options for your record linkages, you use macOS, or if you want more control over your workflow, Python is a good option, especially using the <a href="https://github.com/RobinL/fuzzymatcher">fuzzymatcher</a> or <a href="https://github.com/J535D165/recordlinkage">Python Record Linkage Toolkit</a>&nbsp;libraries.</p>
+<h4>fuzzymatcher&nbsp;examples</h4>
+<p>Here is a basic example from the fuzzymatcher docs linking two&nbsp;tables.</p>
+<p>Table&nbsp;A </p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>ons_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Darlington</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Monmouthshire</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Havering</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Knowsley</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Charnwood</td>
+</tr>
+</tbody>
+</table>
+<p>and Table&nbsp;B</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>os_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Darlington (B)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Havering London Boro</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sir Fynwy - Monmouthshire</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Knowsley District (B)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Charnwood District (B)</td>
+</tr>
+</tbody>
+</table>
+<p>Writing the&nbsp;following</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">fuzzymatcher</span>  
+<span class="n">fuzzymatcher</span><span class="o">.</span><span class="n">fuzzy_left_join</span><span class="p">(</span><span class="n">df_left</span><span class="p">,</span> <span class="n">df_right</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="s2">&quot;ons_name&quot;</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s2">&quot;os_name&quot;</span><span class="p">)</span>  
+</code></pre></div>
+
+<p>gives&nbsp;you:</p>
+<table>
+<thead>
+<tr>
+<th>best_match_score</th>
+<th>ons_name</th>
+<th>os_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.178449</td>
+<td>Darlington</td>
+<td>Darlington (B)</td>
+</tr>
+<tr>
+<td>0.133371</td>
+<td>Monmouthshire</td>
+<td>Sir Fynwy - Monmouthshire</td>
+</tr>
+<tr>
+<td>0.102473</td>
+<td>Havering</td>
+<td>Havering London Boro</td>
+</tr>
+<tr>
+<td>0.155775</td>
+<td>Knowsley</td>
+<td>Knowsley District (B)</td>
+</tr>
+<tr>
+<td>0.155775</td>
+<td>Charnwood</td>
+<td>Charnwood District (B)</td>
+</tr>
+</tbody>
+</table>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/python.html">python</a>
+      <a href="./tag/information-management.html">information management</a>
+    </p>
+  </div>
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy;  2024 - This work is licensed under a <a rel="license noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>
+  <a rel="license noreferrer"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank"
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0" 
+         src="./theme/img/cc/by-sa.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Brian Mc Donald ",
+  "url" : ".",
+  "image": "",
+  "description": "Tips, thoughts and musings on humanitarian data analysis"
+}
+</script></body>
+</html>
